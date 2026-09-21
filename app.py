@@ -17,11 +17,18 @@ def send_ticket():
         keyboard = None
         
         # Логика кнопок спрятана в облаке!
+        # Button logic hidden in the cloud
         if action == "START_AND_FINISH":
             keyboard = {
                 "inline_keyboard": [
                     [{"text": "Sakt izpildi!", "callback_data": f"PROCESA|{pieteikums_id}"}],
                     [{"text": "Darbs pabeigts", "callback_data": f"PABEIGTS|{pieteikums_id}"}]
+                ]
+            }
+        elif action == "START_ONLY":
+            keyboard = {
+                "inline_keyboard": [
+                    [{"text": "Sakt izpildi!", "callback_data": f"PROCESA|{pieteikums_id}"}]
                 ]
             }
         elif action == "FINISH":
